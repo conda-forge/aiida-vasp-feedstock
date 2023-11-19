@@ -19,16 +19,12 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
-    - reentry
+    - python >=3.9
   run:
-    - aiida-core.atomic_tools >=1.2.1,!=1.4.0,!=1.4.1
+    - aiida-core.atomic_tools~=2.4
     - lxml
     - packaging
-    - parsevasp >=2.0.1
-    - pymatgen <=2020.12.3
-    - python >=3.6
-    - subprocess32
+    - parsevasp~=3.2
 
 test:
   imports:
