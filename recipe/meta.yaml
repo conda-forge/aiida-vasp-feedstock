@@ -21,10 +21,11 @@ requirements:
     - pip
     - python >=3.9
   run:
-    - aiida-core.atomic_tools~=2.4
+    - aiida-core.atomic_tools ~=2.4
     - lxml
     - packaging
-    - parsevasp~=3.2
+    - parsevasp ~=3.2
+    - python >=3.9
 
 test:
   imports:
