@@ -1,13 +1,13 @@
 {% set name = "aiida-vasp" %}
-{% set version = "2.1.1" %}
+{% set version = "4.1.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/aiida-vasp-{{ version }}.tar.gz
-  sha256: 42597714f3eccbda2dfd0bee5fdac3ede6d4ef07e57b1efaec1d912de355e02d
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 2b81e7580c594178d91ed70a06743326be58be0fbfd2742ab402e4727964497e
 
 build:
   entry_points:
@@ -46,5 +46,5 @@ about:
 
 extra:
   recipe-maintainers:
-  - mbercx
-  - chrisjsewell
+    - mbercx
+    - chrisjsewell
