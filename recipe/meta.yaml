@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/aiida-vasp-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/aiida-vasp-{{ version }}.tar.gz
   sha256: 42597714f3eccbda2dfd0bee5fdac3ede6d4ef07e57b1efaec1d912de355e02d
 
 build:
@@ -14,12 +14,12 @@ build:
     - mock-vasp = aiida_vasp.commands.mock_vasp:mock_vasp
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
     - reentry
   run:
     - aiida-core.atomic_tools >=1.2.1,!=1.4.0,!=1.4.1
@@ -27,7 +27,7 @@ requirements:
     - packaging
     - parsevasp >=2.0.1
     - pymatgen <=2020.12.3
-    - python >=3.6
+    - python >={{ python_min }}
     - subprocess32
 
 test:
@@ -37,6 +37,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/aiida-vasp/aiida-vasp
