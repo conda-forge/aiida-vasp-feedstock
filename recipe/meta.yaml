@@ -1,5 +1,5 @@
 {% set name = "aiida-vasp" %}
-{% set version = "3.0.1" %}
+{% set version = "3.1.0" %}
 {% set python_min = "3.9" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 84221019608555450232907fb405a57b933556e96e79cf8637cdf11632d70982
+  sha256: 4df53189cb5617222d885cf718c7cd9b2af5ab625c17d25e643ec2c1d6780610
 
 build:
   entry_points:
