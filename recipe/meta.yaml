@@ -1,6 +1,6 @@
 {% set name = "aiida-vasp" %}
-{% set version = "3.1.1" %}
-{% set python_min = "3.9" %}
+{% set version = "4.0.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 64b3392efb4fa245b82ce66a4c6e7f241212d9d1095283a9ea75c0770db5c729
+  sha256: 3508b2cba96a097bef6b516c1a1c36f8e99a39e83f71a7a6d1b090762e54bcf0
 
 build:
   entry_points:
@@ -24,10 +24,13 @@ requirements:
     - flit-core >=3.4,<4
   run:
     - python >={{ python_min }}
-    - aiida-core.atomic_tools ~=2.4
+    - aiida-core >=2.3
+    - ase
     - lxml
+    - seekpath
     - packaging
-    - parsevasp ~=3.2
+    - pydantic
+    - parsevasp >=3.2
 
 test:
   imports:
