@@ -32,6 +32,7 @@ requirements:
     - pydantic
     - parsevasp >=3.4
     - spglib
+    - pyyaml
 
 test:
   imports:
