@@ -1,5 +1,5 @@
 {% set name = "aiida-vasp" %}
-{% set version = "4.2.0" %}
+{% set version = "5.0.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 3dbad7699ee375723fbe8bb66ed85b533b612ce9d4ea7ec730e5a17ef41593b7
+  sha256: 59bdb24c4910e71b38fe3d216bae598a378eb6e3bba01a6da4bc33ad19a15931
 
 build:
   entry_points:
@@ -32,6 +32,7 @@ requirements:
     - pydantic
     - parsevasp >=3.4
     - spglib
+    - pyyaml
 
 test:
   imports:
